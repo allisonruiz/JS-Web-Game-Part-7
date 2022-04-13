@@ -4,7 +4,9 @@ const pc = newPlayableCharacter(100, 110)
 // Create a non-playable character
 const npc = newNonPlayableCharacter(50, 300)
 
-async function moveNPC(){
+async function moveNPC(loop){
+    let run = 0;
+    while (run <= loop){
     await npc.walkNorth(1400)
     await npc.walkEast(1200)
     await npc.walkSouth(300)
@@ -12,8 +14,10 @@ async function moveNPC(){
     await npc.walkSouth(1500)
     await npc.walkWest(2700)
     await npc.walkNorth(400)
+    run++
+    }
 }
-moveNPC()
+moveNPC(3)
 
 
 
